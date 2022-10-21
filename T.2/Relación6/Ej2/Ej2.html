@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Titulo original</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src=''></script>
+</head>
+
+<body>
+    <img id="imagen 1" src="algo.jpg">
+    <br/>
+    <img id="imagen 2" src="algo.jpg">
+    <br/>
+    <img id="imagen 3" src="algo.jpg">
+    <br/>
+    <br/>
+
+    <a href="https://educacionadistancia.juntadeandalucia.es/centros/granada/course/view.php?id=2083">Enlace 1</a>
+    <br/>
+    <a href="https://educacionadistancia.juntadeandalucia.es/centros/granada/course/view.php?id=2083">Enlace 2 </a>
+    <br/>
+    <script>
+        document.write("<table border=2>");
+        //imagenes documento num
+        let numImg = document.images.length;
+        document.write("<tr><td>"+numImg + "</td></tr>");
+
+        //id de la primera imagen
+        let primImg = document.images[0].id;
+        document.write("<tr><td>"+primImg + "</td></tr>");
+
+        //numero enlaces documento
+        document.write("<tr><td>"+document.links.length + "</td></tr>");
+
+        //cambia titulo documento
+        document.title = "Nuevo titulo";
+        document.write("</table>");
+    </script>
+
+
+</body>
+
+</html>
