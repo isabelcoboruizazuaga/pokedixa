@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Titulo</title>
+    <style>
+      button {
+        margin: 10px
+      };
+    </style>
+  </head>
+  <body>
+    <h1>aaaaaaaaaa</h1>
+    <table border="2">
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+    </table>
+    <script>
+        let tds= document.getElementsByTagName("td");
+           for (let i = 0; i < tds.length; i++) {
+             tds[i].addEventListener('mousemove',click);       
+           }
+     
+         function click(e){
+          if(e.shiftKey){
+            e.target.style.backgroundColor = "blue";
+          }else{
+            if(e.ctrlKey){
+            e.target.style.backgroundColor = "red";
+          }
+          }
+         }
+         
+       </script>
+  </body>
+  
+</html>

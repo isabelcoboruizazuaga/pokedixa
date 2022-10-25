@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>PELEA DE DINOSAURIOS</title>
+    <style>
+        button {
+            margin: 10px
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    <h1>PELEA DE DINOSAURIOS</h1>
+     <img src="dinosaur2.png" id="image" style="position:absolute" alt="Dinosaur" />
+    <img src="dinosaur.png" id="image" style="position:absolute" alt="Dinosaur" />
+   
+</body>
+
+<script>
+    let imgs = document.getElementsByTagName("img");
+
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].addEventListener('click', click);
+
+    }
+
+    window.addEventListener('mousemove', move);
+    let mover = false;
+    let imagen;
+    let offsetx, offsety;
+
+    function click(e) {
+        mover = !mover;
+        imagen = e.target;
+        offsetx = e.clientX - e.target.offsetLeft;
+        offsety = e.clientY - e.target.offsetTop;
+
+    }
+    function move(e) {
+        if (mover) {
+            imagen.style.top = e.clientY - offsety + "px";
+            imagen.style.left = e.clientX - offsetx + "px";
+        }
+    }
+
+</script>
+
+</html>

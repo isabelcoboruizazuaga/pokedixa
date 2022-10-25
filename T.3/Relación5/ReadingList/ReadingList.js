@@ -70,7 +70,7 @@ class BookList {
         this.#setCurrentBook(this.nextBook);
         this.#setNextBook(this.#findUnreadBook());
     }
-    #findUnreadBook(){
+    #findUnreeadBook(){
         this.books.forEach(book => {
             if(!book.read){
                 return book;

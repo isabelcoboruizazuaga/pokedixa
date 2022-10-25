@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Titulo</title>
+    <style>
+        button {
+            margin: 10px
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    <h1>aaaaaaaaaa</h1>
+    <table border="2">
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+        <tr style="height:50px">
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+            <td style="width:50px"></td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    let tds = document.getElementsByTagName("td");
+    let bod = document.querySelector("body");    
+    bod.addEventListener('keypress', key);
+
+    for (let i = 0; i < tds.length; i++) {
+        tds[i].addEventListener('mousemove', move);
+        tds[i].addEventListener('mouseover',clica);
+    }
+
+    function move(e) {
+        if (e.shiftKey) {
+            e.target.style.backgroundColor = "blue";
+        } else {
+            if (e.ctrlKey) {
+                e.target.style.backgroundColor = "red";
+            }
+        }
+    }
+    function clica(e) {
+        e.target.style.backgroundColor = "white";
+    }
+    function key(e) {
+        if(e.key=="b"){
+            for (let i = 0; i < tds.length; i++) {
+            tds[i].style.backgroundColor = "white";
+        }
+    }
+    }
+
+</script>
+
+</html>
