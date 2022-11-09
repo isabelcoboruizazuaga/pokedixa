@@ -1,39 +1,90 @@
-class BookList {
+/**
+ * Al crear un objeto lista le pasas los libros y se cuentan los libros leidos, sin leer y se meten los leidos en una lista
+ * nReadBooks= numero de libros leidos;
+ * nNotReadBooks= numero de libros no leidos;
+ * readBooks= lista de libros leidos
+ * books= lista de libros totales
+ */
+ class BookList {
+    /**
+     * 
+     * @param {*} books array de libros ya creados
+     * si no le pasas nada puedes añadirlos con addBook(libro)
+     */
     constructor(books=[]){
         this.books=books;
+        this.#readBooks=[]
         this.#countReadBooks();
-        this.#setCurrentBook;
-        this.#setLastBook;
-        this.#setNextBook;
     }
 
-    assignCurrentBook(myBook){
+    /**
+     * Asigna el libro que se está leyendo actualmente
+     * @param {*} title = Titulo del libro a asignar
+     * Si no se pasa un título se asignará el siguiente libro sin leer
+     * @returns boolean =true si fue exitoso
+     */
+    assignCurrentBook(title=""){
         this.books.forEach(book => {
-            if(book.title==myBook.title){
-                this.currentBook=myBook;
-                this.#setNextBook(this.#findUnreadBook());
-                return 1;
+            if(book.title==title){
+                this.currentBook=book;
+                return true;
             }
         });
-        this.addBook(myBook);
-        this.currentBook=myBook;
-        this.#setNextBook(this.#findUnreadBook());
-        
+        this.books.forEach(book => {
+            if(book.read==false){
+                this.currentBook=book;
+                return true;
+            }
+        });
+
     }
 
-    #setNextBook(book=0){
+    /**
+     * Marca un libro como leído
+     * @param {*} title 
+     * @returns true si lo asignó, false si no encontró el libro
+     */
+    readBook(title){
+        this.books.forEach(book => {
+            if(book.title==title){
+                book.setRead(true);
+                return true;
+            }
+        });
+        return false;
+    }
+
+    
+    /**
+     * Añade un libro a la lista
+     * @param {*} book Book (objeto de la clase book)
+     */
+     addBook(book){
+        this.books.push(book);
+        if(book.read){
+            this.nReadBooks++;
+        }else{
+            this.nNotReadBooks++;
+        }
+    }
+
+    getbookList(){
+        return this.books;
+    }
+
+    setNextBook(book){
         this.nextBook=book;
     }
     getNextBook(){
         return this.nextBook;
     }
-    #setCurrentBook(book=0){
+    setCurrentBook(book){
         this.currentBook=book;
     }
     getCurrentBook(){
         return this.currentBook;
     }
-    #setLastBook(book=0){
+    setLastBook(book){
         this.lastBook=book;
     }
     getLastBook(){
@@ -45,6 +96,7 @@ class BookList {
         this.nNotReadBooks=0;
         this.books.forEach(book => {
             if(book.read){
+                this.#readBooks.push(book);
                 this.nReadBooks++;
             }else{                
                 this.nNotReadBooks++;
@@ -52,14 +104,9 @@ class BookList {
         });
     }
 
-    addBook(book){
-        this.books.push(book);
-        if(book.read){
-            this.nReadBooks++;
-        }else{
-            this.nNotReadBooks++;
-        }
-    }
+    /**
+     * A partir de aquí yo no usaría nada porque ni sé lo que hay <3
+     */
 
     finishCurrentBook(){
         if(this.currentBook){
@@ -104,7 +151,18 @@ class BookList {
 
 }
 
+/**
+ * Clase libro
+ */
 class Book {
+    /**
+     * 
+     * @param {*} title 
+     * @param {*} genre 
+     * @param {*} author 
+     * @param {*} read opcional, se setea a false si no se indica
+     * @param {*} readDate opcional, se setea a 0 si no se indica
+     */
     constructor(title, genre, author, read=false,readDate=0) {
         this.title = title;
         this.genre = genre;
@@ -125,38 +183,3 @@ class Book {
     }
 
 }
-
-
-let myList= new BookList();
-
-let myBook= new Book("El quijote","Novela","Cervantes");
-myList.addBook(myBook);
-myList.showList();
-document.write("<br>");
-
-myList.addBook(new Book("Libro 2","Sci Fic","Lovecraft"));
-myList.addBook(new Book("El gato negro","Terror","Poe"));
-myList.addBook(new Book("Libro 4","Misterio","Dazai"));
-myList.showList();
-document.write("<br>");
-
-myList.assignCurrentBook(new Book("Libro 4","Misterio","Dazai"));
-document.write("Current book: ", myList.getCurrentBook().getTitle(),"<br>");
-myList.showList();
-document.write("<br>");
-myList.isBookInList(new Book("Libro 4","Misterio","Dazai"));
-
-myList.assignCurrentBook(myBook);
-document.write("Current book: ", myList.getCurrentBook().getTitle(),"<br>");
-myList.showList();
-document.write("<br>");
-
-
-myList.finishCurrentBook();
-document.write(myList.getLastBook().getTitle());
-document.write("<br>");
-document.write(myList.getCurrentBook().getTitle());
-document.write("<br>");
-document.write(myList.getNextBook().getTitle());
-document.write("<br>");
-
