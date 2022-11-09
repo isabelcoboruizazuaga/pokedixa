@@ -199,3 +199,8 @@ class Book {
     }
 
 }
+
+export{
+    BookList,
+    Book
+} 
