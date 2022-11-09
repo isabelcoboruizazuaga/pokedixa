@@ -182,4 +182,20 @@ class Book {
         return this.title;
     }
 
+    getGenre(){        
+        return this.genre;
+    }
+
+    getAuthor(){
+        return this.author;
+    }
+
+    getRead(){
+        return this.read;
+    }
+
+    getReadDate(){
+        return this.readDate;
+    }
+
 }
