@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='Ej3.js'></script>
+</head>
+<style>
+    img {
+        width: 10rem;
+        height: 14rem;
+        margin: 1rem;
+    }
+
+    #datos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #datos div {
+        text-align: center;
+    }
+
+    #juego{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #partida{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <section id="datos">
+        <div>
+            <h1>JAVASCRIPT PAIRS GAME</h1>
+            <h2>CLICK ANY CARD TO BEGIN</h2>
+            <h2 id="intentos">10</h2>
+        </div>
+    </section>
+    <section id="juego">
+        <div>
+        <div class="filaSup">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+        </div>
+        <div class="filaInf">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+            <img src="./img1.jpg">
+        </div>
+    </div>
+    </section>
+    <section id="partida">
+        <div>
+            <p id="won" >YOU WON</p>
+            <p id="lost" >You lost :c</p>
+            <button id="game" >New game</button>
+        </div>
+    </section>
+</body>
+
+</html>

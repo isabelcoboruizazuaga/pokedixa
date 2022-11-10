@@ -77,12 +77,12 @@
 
 <script>
     let tds = document.getElementsByTagName("td");
-    let bod = document.querySelector("body");    
+    let bod = document.querySelector("body");
     bod.addEventListener('keypress', key);
 
     for (let i = 0; i < tds.length; i++) {
         tds[i].addEventListener('mousemove', move);
-        tds[i].addEventListener('mouseover',clica);
+        tds[i].addEventListener('mouseover', pasa);
     }
 
     function move(e) {
@@ -94,15 +94,15 @@
             }
         }
     }
-    function clica(e) {
+    function pasa(e) {
         e.target.style.backgroundColor = "white";
     }
     function key(e) {
-        if(e.key=="b"){
+        if (e.key == "b") {
             for (let i = 0; i < tds.length; i++) {
-            tds[i].style.backgroundColor = "white";
+                tds[i].style.backgroundColor = "white";
+            }
         }
-    }
     }
 
 </script>
