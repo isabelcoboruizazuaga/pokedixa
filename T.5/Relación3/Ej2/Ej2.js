@@ -62,6 +62,8 @@ window.onload = () => {
         elegirCategoria();
         colocarPalabra(palabra);
         console.log(palabra);
+        lives = 10;
+        liv.innerHTML = lives;
     }
 
     /**
