@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='pong.js'></script>
+</head>
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oswald|Raleway|Roboto|Indie+Flower|Gamja+Flower');
+
+    text {
+        font-family: Oswald;
+        font-size: 40px;
+    }
+
+    line {
+        stroke: rgb(0, 0, 0);
+        stroke-width: 2
+    }
+</style>
+
+<body>
+    <svg height="400" width="800">
+        <rect height="400" width="800" style="fill:rgb(110, 110, 112)" />
+        <line stroke-dasharray="5, 5" x1="400" y1="600" x2="400" y2="1" style="stroke-width: 3px;"></line>
+        <text id="p1Points" x="700" y="40" fill="white">0</text>
+        <text id="p2Points" x="100" y="40" fill="white">0</text>
+        <circle id="ball" cx="400" cy="20" r="20" fill="black" />
+        <rect id="p1" x="0" y="0" width="20" height="75" style="fill:rgb(0, 0, 0);stroke-width:3;" />
+        <rect id="p2" x="780" y="0" width="20" height="75" style="fill:rgb(0, 0, 0);stroke-width:3;" />
+    </svg>
+</body>
+
+</html>
