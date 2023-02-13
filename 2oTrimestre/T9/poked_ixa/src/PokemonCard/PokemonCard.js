@@ -1,18 +1,27 @@
 import './PokemonCard.css';
 import image from '../media/pokeball.png';
 import image2 from '../media/pokeballOpen.png';
+import { useNavigate } from "react-router-dom";
 
 export default function PokemonCard(props) {
-    let nombre = props.pokeName;
-    console.log(nombre);
+    const navigate = useNavigate();
+    const nombre = props.pokeName;
+
     return (
-        <div class="card" style={{ backgroundColor: getRandomColor() }}>
-            <img src={image} class="img-back"></img>
-            <img src={image2} class="img-top"></img>
+        <div className="card" style={{ backgroundColor: getRandomColor() }} onClick={verDetalle}>
+            <img src={image} className="img-back"></img>
+            <img src={image2} className="img-top"></img>
             <h2>{nombre}</h2>
         </div>
     );
+
+
+    function verDetalle() {
+        navigate("/detalle/" + nombre);
+    }
+
 }
+
 
 
 

@@ -1,20 +1,22 @@
 import './PokemonDetalle.css';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function PokemonCard(props) {
 
-    const [pokemon, setPokemon] = useState([]);
-    const [urlPokeApi, setUrlPokeApi] = useState("https://pokeapi.co/api/v2/pokemon/ditto");
-    useEffect(() => cargaDatos(), []);
 
+    const {id}=useParams();
     
+    const [pokemon, setPokemon] = useState([]);
+    const [urlPokeApi, setUrlPokeApi] = useState("https://pokeapi.co/api/v2/pokemon/"+id);
+    useEffect(() => cargaDatos(), []);
 
     function cargaDatos() {
         fetch(urlPokeApi)
             .then((response) => response.json())
             .then((datosApi) => {
                 console.log(datosApi)
-                setPokemon(pokemon = datosApi);
+                setPokemon(datosApi);
             });
     
     }
