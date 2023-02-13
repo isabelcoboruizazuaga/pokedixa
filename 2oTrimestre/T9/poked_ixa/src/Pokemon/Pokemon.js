@@ -1,19 +1,14 @@
 import './Pokemon.css';
-import ultraBall from '../media/ultraBall.png';
-import image from '../media/pokeballOpen.png';
+import image from '../media/pokeball.png';
+import image2 from '../media/pokeballOpen.png';
 import PokemonCard from '../PokemonCard/PokemonCard';
-import PokemonDetalle from '../PokemonDetalle/PokemonDetalle';
 import { useState, useEffect } from 'react';
 
-
-export default  function Pokemon() {
-    const [numPokemons, setnumPokemons] = useState(0);
-
+export default function Pokemon() {
     const [listaPokemon, setListaPokemons] = useState([]);
     const [urlPokeApi, setUrlPokeApi] = useState("https://pokeapi.co/api/v2/pokemon?limit=8");
+
     useEffect(() => cargaTodos(), []);
-
-
 
     function cargaTodos() {
         fetch(urlPokeApi)
@@ -22,7 +17,6 @@ export default  function Pokemon() {
                 setListaPokemons(listaPokemon.concat(datosApi.results))
                 setUrlPokeApi(datosApi.next);
             });
-
     }
 
     function cargaMas() {
@@ -30,8 +24,7 @@ export default  function Pokemon() {
     }
 
 
-
-    return (<div className="App">
+    return (
         <section id="listaPokemon">
             {
                 listaPokemon.map((pokemon) =>
@@ -40,42 +33,11 @@ export default  function Pokemon() {
             }
 
             <div className="card" onClick={cargaMas}>
-                <img src={image} className="img-top"></img>
-                <img src={ultraBall} className="img-back"></img>
+                <img src={image2} className="img-top"></img>
+                <img src={image} className="img-back"></img>
                 <h2>Mostrar más</h2>
             </div>
-
-        </section>
-        <section>
-        </section>
-
-
-
-
-    </div>)
-    /**
-     * 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navegacion />}></Route>
-          <Route path="/cabecera" element={<Cabecera />}></Route>
-          <Route path="/detalle/:id" element={<Cabecera />}></Route>
-       </Routes>
-  
-       <Navegacion></Navegacion>
-      </BrowserRouter>
-     */
-
-
-    /*return (
-      <div className="App">
-        <Cabecera></Cabecera>
-        <header className="App-header">
-          <h1>Hola!</h1>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
-    );*/
+        </section>)
 }
 
 

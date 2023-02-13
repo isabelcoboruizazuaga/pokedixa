@@ -1,25 +1,44 @@
 import './PokemonCard.css';
-import image from '../media/pokeball.png';
-import image2 from '../media/pokeballOpen.png';
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+
 
 export default function PokemonCard(props) {
     const navigate = useNavigate();
     const nombre = props.pokeName;
+    const [imgFrontPokemon, setImgFrontPokemon] = useState([]);
+    const [imgBackPokemon, setImgBackPokemon] = useState([]);
+    useEffect(() => sacaImagen(), []);
 
-    return (
-        <div className="card" style={{ backgroundColor: getRandomColor() }} onClick={verDetalle}>
-            <img src={image} className="img-back"></img>
-            <img src={image2} className="img-top"></img>
-            <h2>{nombre}</h2>
-        </div>
-    );
-
+    function sacaImagen(){
+        fetch("https://pokeapi.co/api/v2/pokemon/"+nombre)
+            .then((response) => response.json())
+            .then((datosPokemon) => {
+                setImgFrontPokemon(imgFrontPokemon.concat(datosPokemon.sprites.front_default));
+                setImgBackPokemon(imgBackPokemon.concat(datosPokemon.sprites.back_default));
+            });
+    }
 
     function verDetalle() {
         navigate("/detalle/" + nombre);
     }
 
+    return (
+        <div className="card" style={{ backgroundColor: getRandomColor() }} onClick={verDetalle}>
+             {
+                imgFrontPokemon.map((image) =>
+                <img src={image} key={image} className="img-back"></img>
+                )
+            }
+            
+            {
+                imgBackPokemon.map((image) =>
+                <img src={image} key={image} className="img-top"></img>
+                )
+            }
+            <h2>{nombre}</h2>
+        </div>
+    );
 }
 
 

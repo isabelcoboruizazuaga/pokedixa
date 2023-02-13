@@ -6,7 +6,6 @@ function Navegacion() {
       <Link to="/">Inicio</Link>
       <Link to="/pokemon">Pokemon</Link>
       <Link to="/detalle/ditto">Detalle</Link>
-
    </>
 }
 
