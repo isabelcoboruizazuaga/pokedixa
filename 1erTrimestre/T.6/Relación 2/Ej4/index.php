@@ -1,5 +1,0 @@
-<?php
-
-echo("Texto php");
-
-?>
