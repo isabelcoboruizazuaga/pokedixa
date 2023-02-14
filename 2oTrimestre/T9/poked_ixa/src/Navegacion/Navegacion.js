@@ -7,6 +7,7 @@ function Navegacion() {
       <Link to="/listaDatos">Datos</Link>
       <Link to="/pokemon">Pokemon</Link>
       <Link to="/detalle/ditto">Detalle</Link>
+      <Link to="/whosThatPokemon">Cuál es este pokemon</Link>
    </>
 }
 

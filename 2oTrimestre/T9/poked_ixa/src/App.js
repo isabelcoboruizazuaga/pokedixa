@@ -6,6 +6,7 @@ import Pokemon from './Pokemon/Pokemon';
 import PokemonDetalle from './PokemonDetalle/PokemonDetalle';
 import Inicio from './Inicio/Inicio';
 import ListaDatos from './ListaDatos/listaDatos';
+import WhosThatPokemon from './whosThatPokemon/whosThatPokemon';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/listaDatos" element={<ListaDatos></ListaDatos>}></Route>
         <Route path="/pokemon" element={<Pokemon/>}></Route>
         <Route path="/detalle/:id" element={<PokemonDetalle />}></Route>
+        <Route path="/whosThatPokemon" element={<WhosThatPokemon />}></Route>
       </Routes>
     </BrowserRouter>
 
