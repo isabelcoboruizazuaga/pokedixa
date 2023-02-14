@@ -1,0 +1,61 @@
+h1{
+    text-transform:uppercase;
+}
+
+.detallePokemon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tipos{
+    text-align: center;
+}
+
+.tipos div{
+    display: flex;
+}
+
+.tipos div p{
+    padding: .5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 20px;
+
+}
+
+.datosPrincipales{
+    display: flex;
+}
+.datosPrincipales table{
+    margin-left: 2rem;
+    background-color: #2f8b97;
+    width: 40rem;
+    padding: 1rem;
+    font-size: x-large;
+    border-radius: 20px;
+}
+
+
+.datosPrincipales table tr:nth-child(odd){
+    color: #020522;
+    font-weight: bold;
+}
+
+.imagenes .img-top {
+    display: none;
+}
+.imagenes:hover .img-top {
+    display: inline;
+}
+.imagenes:hover .img-back {
+    display: none;
+}
+
+.imagenes img{
+    width: 25rem;
+    border-radius: 2rem;
+    background-color: #F2F2F2;
+}
