@@ -7,6 +7,7 @@ import PokemonDetalle from './PokemonDetalle/PokemonDetalle';
 import Inicio from './Inicio/Inicio';
 import ListaDatos from './ListaDatos/listaDatos';
 import WhosThatPokemon from './whosThatPokemon/whosThatPokemon';
+import Puntuaciones from './Puntuaciones/Puntuaciones';
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
       <Navegacion></Navegacion>
       <Routes>
         <Route path="/" element={<Inicio></Inicio>}></Route>
+        <Route path="/*" element={<h3>Lo siento, esta ruta no existe</h3>}></Route>
         <Route path="/listaDatos" element={<ListaDatos></ListaDatos>}></Route>
+        <Route path="/puntuaciones" element={<Puntuaciones></Puntuaciones>}></Route>
         <Route path="/pokemon" element={<Pokemon/>}></Route>
         <Route path="/detalle/:id" element={<PokemonDetalle />}></Route>
         <Route path="/whosThatPokemon" element={<WhosThatPokemon />}></Route>

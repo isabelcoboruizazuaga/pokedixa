@@ -1,0 +1,55 @@
+.puntuaciones{
+    min-height: 100vh;
+    height: fit-content;
+    
+    background-image: url("../media/rockets_ball.png");
+    background-size: cover;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+}
+
+.puntuaciones div{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+
+    min-width: 40%;
+    min-height: 60%;
+    width: fit-content;
+    height: fit-content;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.974);
+    border-radius: 2rem;
+    color: white;
+}
+
+.puntuaciones table td{
+    
+  padding-bottom: 1em;
+}
+.puntuaciones table td:nth-child(odd){
+    padding-right: 20rem;
+}
+
+.puntuaciones button{
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: #bd2929;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.puntuaciones button:hover{
+    color: white;
+}

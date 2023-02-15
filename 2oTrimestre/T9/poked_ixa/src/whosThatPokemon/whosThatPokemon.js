@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
-import "./whosThatPokemon.css"
+import "./whosThatPokemon.css";
+import { useNavigate } from "react-router-dom";
 
 export default function WhosThatPokemon() {
+    const navigate = useNavigate();
     const [listaPokemon, setListaPokemons] = useState([]);
     const [pokemonCorrecto, setPokemonCorrecto] = useState([]);
     const [listaOpciones, setListaOpciones] = useState([]);
+    const [puntos, setPuntos] = useState(0);
     const [image, setImage] = useState("#");
     const [ganar, setGanar] = useState(false);
+    const [modo, setModo] = useState("facil");
     useEffect(() => cargaTodos(), []);
 
     function randomNumber() {
@@ -68,6 +72,9 @@ export default function WhosThatPokemon() {
     }
 
     function empezar() {
+        if (ganar == false) {
+            setPuntos(puntos - 1);
+        }
         setGanar(false);
         setListaPokemons([]);
         setListaOpciones([]);
@@ -76,27 +83,59 @@ export default function WhosThatPokemon() {
 
     function evaluar(nombre) {
         if (nombre == pokemonCorrecto.name) {
-            console.log("GANASTE");
+            if (modo == "facil") {
+                setPuntos(puntos + 1);
+            } else {
+                setPuntos(puntos + 2);
+            }
 
             setListaPokemons([]);
             setListaOpciones([]);
             setGanar(true);
         } else {
-
+            setPuntos(puntos - 1);
         }
     }
 
+    function acabar() {
+        let puntuaciones = [];
+        puntuaciones = puntuaciones.concat(JSON.parse(localStorage.getItem('puntuaciones')));
+        let player = prompt('Introduce tu nombre');
+
+        if (player.length > 0) {
+
+            puntuaciones.push({ player, puntos });
+            console.log(puntuaciones);
+
+            localStorage.setItem('puntuaciones', JSON.stringify(puntuaciones));
+            navigate("/puntuaciones");
+        }
+    }
+    function changeModo() {
+        if (modo == "facil") {
+            setModo("dificil");
+        } else {
+            setModo("facil");
+        }
+    }
 
     return (
         <section className="juego">
-            <button onClick={empezar}>Empezar</button>
             <h1>¿Cuál es este Pokemon?</h1>
+            <div className='controles'>
+                <h3>Puntuacion: {puntos}</h3>
+                <div>
+                    <button onClick={empezar}>Nuevo Pokemon</button>
+                    <button onClick={acabar}>Rendirse</button>
+                    <button onClick={changeModo}>Cambiar modo</button>
+                </div>
+            </div>
             <div className='game'>
                 <div className='whos'>
-                    <img src={image}></img>
+                    <span><img src={image} className={modo}></img></span>
                 </div>
 
-                {(ganar) ? <div className='ganaste'><p>GANASTE!</p></div> :
+                {(ganar) ? <div className='ganaste'><p>Correcto!</p></div> :
                     <div className='respuestas'>{
                         listaOpciones.map((pokemon) =>
                             <button onClick={() => evaluar(pokemon.name)} key={pokemon.name}><span>{pokemon.name}</span></button>

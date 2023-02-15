@@ -15,7 +15,24 @@
 }
 
 .juego {
+    padding: 1rem;
+    height: 100vh;
+
+    background-image: url("../media/repeat_ball.png");
+    background-size: cover;
+}
+
+.juego .controles {
     margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.juego .controles button {
+    border: 1px solid black;
+    background-color: #bd2929;
+    font-weight: bold;
 }
 
 .juego .respuestas {
@@ -66,20 +83,30 @@
     width: 50vw;
     height: 70vh;
 
+    /* width: 50vw;
+    height: 70vh;
+
     background-image: url("../media/whosThatPokemon2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
     border: 7px solid black;
-    border-radius: 1rem;
+    border-radius: 1rem;*/
 
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .juego img {
     width: 20rem;
-    margin-top: -2rem;
+}
+
+.whos span{
+    border: 7px solid black;
+    border-radius: 1rem;
+
+    background-color: #fefefeaa;
 }
 
 .game {
@@ -90,4 +117,11 @@
 
 .juego h1 {
     text-align: center;
+}
+
+.dificil {
+    -webkit-filter: contrast(0) sepia(0%) hue-rotate(0) saturate(0%) brightness(0%);
+    filter: contrast(0) sepia(0%) hue-rotate(0) saturate(0%) brightness(0%);
+    opacity: 1;
+    
 }
