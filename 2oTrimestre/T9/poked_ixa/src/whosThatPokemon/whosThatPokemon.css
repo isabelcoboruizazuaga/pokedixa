@@ -1,4 +1,4 @@
-.juego button{
+.juego button {
     padding: 0.7rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -6,30 +6,31 @@
     margin: 1rem;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-    border-radius:2rem;
+    border-radius: 2rem;
 
-    width:fit-content;
-    height:fit-content;
+    width: fit-content;
+    height: fit-content;
 
     font-size: x-large;
 }
-.juego{
+
+.juego {
     margin: 1rem;
 }
 
-.juego .respuestas{
+.juego .respuestas {
     display: flex;
     flex-basis: 50vw;
     flex-wrap: wrap;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
 }
 
-.juego .respuestas button{
+.juego .respuestas button {
     height: 100px;
     flex-basis: 30%;
-    
-    background-image: url("../media/pokeballOpen.png"); 
-    background-size:contain;
+
+    background-image: url("../media/pokeballOpen.png");
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
@@ -37,25 +38,36 @@
     color: #000000;
     text-transform: uppercase;
 }
-.juego .respuestas button span{
+
+.juego .respuestas button span {
     background-color: #cdc9d176;
     border-radius: 2rem;
 }
 
-.juego .respuestas button:hover{
-    
-    background-image: url("../media/pokeball.png"); 
-    background-size:contain;
+.juego .respuestas button:hover {
+
+    background-image: url("../media/pokeball.png");
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.whos{
+.ganaste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50vw;
     height: 70vh;
-    
-    background-image: url("../media/whosThatPokemon2.jpg"); 
-    background-size:cover;
+
+    font-size: 10vw;
+}
+
+.whos {
+    width: 50vw;
+    height: 70vh;
+
+    background-image: url("../media/whosThatPokemon2.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
 
     border: 7px solid black;
@@ -65,16 +77,17 @@
     align-items: center;
 }
 
-.juego img{
+.juego img {
     width: 20rem;
     margin-top: -2rem;
 }
-.game{
+
+.game {
     display: flex;
     flex-direction: row-reverse;
 
 }
 
-.juego h1{
+.juego h1 {
     text-align: center;
 }

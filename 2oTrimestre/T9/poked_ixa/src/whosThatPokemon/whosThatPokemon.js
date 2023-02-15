@@ -68,6 +68,7 @@ export default function WhosThatPokemon() {
     }
 
     function empezar() {
+        setGanar(false);
         setListaPokemons([]);
         setListaOpciones([]);
         cargaTodos();
@@ -94,13 +95,15 @@ export default function WhosThatPokemon() {
                 <div className='whos'>
                     <img src={image}></img>
                 </div>
-                <div className='respuestas'>
-                    {
+
+                {(ganar) ? <div className='ganaste'><p>GANASTE!</p></div> :
+                    <div className='respuestas'>{
                         listaOpciones.map((pokemon) =>
                             <button onClick={() => evaluar(pokemon.name)} key={pokemon.name}><span>{pokemon.name}</span></button>
                         )
                     }
-                </div>
+
+                    </div>}
             </div>
         </section>
     );
