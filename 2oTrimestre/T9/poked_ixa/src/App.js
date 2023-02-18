@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navegacion from './Navegacion/Navegacion';
 import Pokemon from './Pokemon/Pokemon';

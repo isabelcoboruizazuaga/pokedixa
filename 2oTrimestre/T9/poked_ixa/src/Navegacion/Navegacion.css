@@ -1,0 +1,14 @@
+.navegacion{
+   background-color: black;
+    
+    display: flex;
+}
+.navegacion a{
+    text-decoration: none;
+    margin: 1rem;
+    color: white;
+}
+
+.navegacion a:hover{
+    color: yellow;
+}

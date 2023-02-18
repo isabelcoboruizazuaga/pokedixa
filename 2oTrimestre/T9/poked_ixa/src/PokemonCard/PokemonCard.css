@@ -1,4 +1,4 @@
-.card{
+#listaPokemon .card{
     width: 20%;
 
     border: 1px solid black;
@@ -14,12 +14,12 @@
     text-transform: uppercase;
 }
 
-.card .img-top {
+#listaPokemon .card .img-top {
     display: none;
 }
-.card:hover .img-top {
+#listaPokemon .card:hover .img-top {
     display: inline;
 }
-.card:hover .img-back {
+#listaPokemon .card:hover .img-back {
     display: none;
 }

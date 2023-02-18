@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Hollow');
+
+
+.inicio{
+    background-image: url("../media/quick_ball.png");
+    background-size: cover;
+    background-position: center;
+
+}
+
+/*NAVBAR*/
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+	background-color: rgb(195, 170, 148);
+}
+
+.invert { filter: invert(100%); }
+
+/*-----CARRUSEL------*/
+/*Item del carrusel*/
+.carousel{
+    margin-top: 1rem;
+}
+.carousel-item {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.carousel img{
+    width: 99vw;
+    height: 50vh;
+}
+.carousel-caption{
+    font-size: 2rem;
+}
+.carousel h1{
+    
+    font-size: 5rem;
+    font-family: 'Blaka Hollow', cursive !important;
+}
+.inicio h2{
+    margin-top: 1rem !important;
+    margin-left: 0.5rem;
+    font-family: 'Blaka Hollow', cursive !important;
+    color: white !important;
+}
+/*Vídeo*/
+#titulo video {
+    width: 100vw;
+}
+
+/*Texto del carrusel*/
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+}
+
+/*SOBRE NOSOTROS*/
+#sobre-nosotros img {
+    width: 100%;
+}
+#sobre-nosotros .conjunto{
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 7px solid rgba(0, 0, 0, 0.767);
+    border-radius: 1rem;
+}
+#sobre-nosotros .conjunto:nth-child(even){
+    background-color: rgba(219, 219, 59, 0.748) !important;
+}
+#sobre-nosotros .conjunto:nth-child(odd){
+    background-color: rgba(59, 64, 219, 0.748) !important;
+}
+
+/*OPINIONES*/
+#opiniones .card {
+    background-color: rgba(59, 64, 219, 0.748);
+
+    width: 20%;
+}
+#opiniones .cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/*SUSCRIBETE*/
+#suscribete button{
+    background-color: rgb(59, 64, 219);;
+    border-radius: 2rem;
+    font-size: larger;
+}
+
+.btn-outline-light:hover{
+    color: rgb(195, 170, 148) !important;
+}
+
+.modal-content{    
+    background-color: rgb(195, 170, 148) !important;
+}
+
+
+/*SCROLL SPY*/
+.scrollspy-example {
+    position: relative;
+    height: 90vh;
+    overflow: auto;
+
+    overflow-x: hidden;
+}
+
